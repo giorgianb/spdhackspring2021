@@ -1,5 +1,6 @@
 # spdhackspring2021
 March 27th, 2PM-6PM EST
+
 Hackathon Zoom Meeting: [bit.ly/spdhack2021](bit.ly/spdhack2021)
 
 # About ΣΦΔ Hack Spring 2021
