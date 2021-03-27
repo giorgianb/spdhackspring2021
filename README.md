@@ -1,10 +1,36 @@
 # spdhackspring2021
 March 27th, 2PM-6PM EST
 
-Hackathon Zoom Meeting: [bit.ly/spdhack2021](bit.ly/spdhack2021)
+Hackathon Zoom Meeting: \
+Giorgian Borca-Tasciuc is inviting you to a scheduled Zoom meeting.
 
-**THE LINK WILL BE ACTIVATED AT 2PM TODAY**
+Topic: Machine Learning Hackathon
+Time: Mar 27, 2021 02:00 PM Eastern Time (US and Canada)
 
+Join Zoom Meeting
+https://stonybrook.zoom.us/j/93322959952?pwd=bW5Dc2FORkd2OFp1QmZJM2lLOU1Zdz09
+
+Meeting ID: 933 2295 9952
+Passcode: 335854
+One tap mobile
++16468769923,,93322959952#,,,,*335854# US (New York)
++13017158592,,93322959952#,,,,*335854# US (Washington DC)
+
+Dial by your location
+        +1 646 876 9923 US (New York)
+        +1 301 715 8592 US (Washington DC)
+        +1 312 626 6799 US (Chicago)
+        +1 253 215 8782 US (Tacoma)
+        +1 346 248 7799 US (Houston)
+        +1 408 638 0968 US (San Jose)
+        +1 669 900 6833 US (San Jose)
+Meeting ID: 933 2295 9952
+Passcode: 335854
+Find your local number: https://stonybrook.zoom.us/u/adAdN8ULaq
+
+
+
+\
 # About ΣΦΔ Hack Spring 2021
 **ΣΦΔ Hack Spring 2021** is ΣΦΔ's first annual machine learning hackathon. ΣΦΔ Hack Spring 2021 aims to introduce Stony Brook students to the rich and challenging field of machine learning, and develop the skills necessary to build sophisticated machine learning models on their own. 
 
