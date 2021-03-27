@@ -3,6 +3,8 @@ March 27th, 2PM-6PM EST
 
 Hackathon Zoom Meeting: [bit.ly/spdhack2021](bit.ly/spdhack2021)
 
+**THE LINK WILL BE ACTIVATED AT 2PM TODAY**
+
 # About ΣΦΔ Hack Spring 2021
 **ΣΦΔ Hack Spring 2021** is ΣΦΔ's first annual machine learning hackathon. ΣΦΔ Hack Spring 2021 aims to introduce Stony Brook students to the rich and challenging field of machine learning, and develop the skills necessary to build sophisticated machine learning models on their own. 
 
