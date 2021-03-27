@@ -9,9 +9,10 @@ class ContentPredictor(nn.Module):
         super(ContentPredictor, self).__init__()
         self.norm = nn.LayerNorm(input_dim)
         self.rnn = nn.LSTM(input_dim, 256)
+        self.transform = nn.Linear(2 * 256, 256)
+        self.bnorm = nn.BatchNorm1d(256)
+
         self.predictor = nn.Sequential(
-                nn.Linear(2 * 256, 256),
-                nn.LayerNorm(256),
                 nn.Tanh(),
                 nn.Linear(256, output_dim),
                 nn.Softmax(dim=-1),
@@ -28,6 +29,9 @@ class ContentPredictor(nn.Module):
         c_t = c_0[-1]
         o_t = output[-1]
         x = torch.cat((h_t, c_t), dim=-1)
+        x = self.transform(x)
+        if x.shape[0] > 1:
+            x = self.bnorm(x)
         return self.predictor(x)
 
 N_EPOCHS = 100
@@ -43,6 +47,8 @@ loss_fn = torch.nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(params=model.parameters(), lr=0.001)
 print("[Training Model]")
 def do_epoch(model, dataset):
+    true_positives = 0
+    total = 0
     total_loss = 0
     for i, batch in enumerate(dataset):
         optimizer.zero_grad()
@@ -53,18 +59,23 @@ def do_epoch(model, dataset):
 
         authors_p = model(content)
         loss = loss_fn(authors_p, authors)
-        print(f"batch {i}/{len(dataset)}, loss={loss}", end='\r')
+        authors_p = torch.argmax(authors_p, axis=-1)
+        tp = torch.sum(authors_p == authors)
+        n = authors.shape[0]
+        true_positives += tp
+        total += n
+        print(f"batch {i}/{len(dataset)}, acc={tp/n}, loss={loss} ", end='\r')
         total_loss += loss
         loss.backward()
         optimizer.step()
 
-    return total_loss / len(dataset)
+    return total_loss / len(dataset), true_positives / total
 
 try:
     for i in range(N_EPOCHS):
         print(f"Epoch {i}")
-        loss = do_epoch(model, train_data)
-        print(f"final loss={loss}")
+        loss, acc = do_epoch(model, train_data)
+        print(f"final acc={acc} final loss={loss}")
 except KeyboardInterrupt:
     pass
 
